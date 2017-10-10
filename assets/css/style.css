@@ -1,0 +1,12 @@
+.logo{
+	width: 112;
+	height: 28px;
+}
+.navbar{
+    background: -webkit-linear-gradient(to bottom, rgb(255, 255, 220) ,#bcffff );
+    background: linear-gradient(to bottom,rgb(255, 255, 220) ,#bcffff);
+}
+.footer{
+	background: -webkit-linear-gradient(to bottom, rgb(255, 255, 220) ,#bcffff);
+	background: linear-gradient(to bottom,  rgb(255, 255, 220) ,#bcffff);
+}

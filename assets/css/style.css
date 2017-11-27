@@ -14,7 +14,7 @@
   margin-right: 1px; }
 
 /* line 12, style.sass */
-#btnfacebook:hover, #btntwitter:hover, #btninstagram:hover {
+#btngitlab:hover, #btnfacebook:hover, #btntwitter:hover, #btninstagram:hover {
   background-color: white;
   color: #3273dc;
   cursor: pointer;
@@ -25,7 +25,7 @@
           box-shadow: 0 3px 15px -2px; }
 
 /* line 20, style.sass */
-#btnfacebook:active, #btntwitter:active, #btninstagram:active {
+#btngitlab:active, #btnfacebook:active, #btntwitter:active, #btninstagram:active {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   background-color: #FA0B7B;
@@ -34,7 +34,7 @@
           transform: scale(1); }
 
 /* line 26, style.sass */
-#btnfacebook, #btntwitter, #btninstagram {
+#btngitlab, #btnfacebook, #btntwitter, #btninstagram {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-transform: scale(1);

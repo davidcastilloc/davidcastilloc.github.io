@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DaviDJose | Informático</title>
+    <link>https://davidcastilloc.github.io/</link>
+    <description>Recent content on DaviDJose | Informático</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-VE</language>
+    <copyright>DaviDJose | Informático Derechos Reservados</copyright>
+    <lastBuildDate>Thu, 08 Nov 2018 22:13:38 -0400</lastBuildDate>
+    
+	<atom:link href="https://davidcastilloc.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hackea el DOM Con JavaScript!</title>
+      <link>https://davidcastilloc.github.io/post/javascript-dom/</link>
+      <pubDate>Thu, 08 Nov 2018 22:13:38 -0400</pubDate>
+      
+      <guid>https://davidcastilloc.github.io/post/javascript-dom/</guid>
+      <description>El día de hoy voy a ilustrarte en un lenguaje en el que he estado trabajando últimamente, algo que te puede ayudar a crear en tu navegador sin tener que instalar nada, y lo mejor es que no necesitas internet para hacerlo funcionar.
+Se trata de JavaScript, un lenguaje de programación interpretado que funciona en la gran mayoría de navegadores y que hace posible el funcionamiento del 85% de los sitios web de la red de redes.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://davidcastilloc.github.io/404/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidcastilloc.github.io/404/</guid>
+      <description>Error 404: Esta pagina no existe. Parece que la pagina a la que intentas accesar ya noesta en esta direccion. 😟 Probablemente movi este contenido a otro enlace. contactame para ayudarte.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://davidcastilloc.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidcastilloc.github.io/about/</guid>
+      <description>¿Entonces, quién soy yo? 
+Mi Nombre es David Jose, solo soy un chico más al que le fascina escribir software ya sea web o apps de escritorio, siento la necesidad de enseñar un poco lo que he aprendido a lo largo de estos años con aquellos que no han visto el maravilloso mundo de la informática en general y la programación.
+¡Escribir código es lo que me entusiasma y a lo que realmente me dedico!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>
+Hackea el DOM Con JavaScript!
+</title>
+	<link rel="stylesheet" type="text/css" href="/css/semantic.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/site.css" />
+
+			 
+<link rel="stylesheet" type="text/css" href="/css/animate.css">
+	
+
+			 
+<link rel="stylesheet" type="text/css" href="/css/prism.css">
+	
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/semantic.min.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+	
+<script src="/js/prism.js"></script>
+	
+
+
+<script type="text/javascript">
+	var enabledPost=true 
+	var colorBG= true  
+	var enabledDimmer =  true 
+	var shToken=""
+	var shDomains=""    
+	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
+</script>
+
+	
+	
+	<meta name="author" content="David Castillo" />
+	<meta name="description" content="El día de hoy voy a ilustrarte en un lenguaje en el que he estado trabajando últimamente, algo que te puede ayudar a crear en tu navegador sin tener que instalar nada, y lo mejor es que no necesitas internet para hacerlo funcionar.
+Se trata de JavaScript, un lenguaje de programación interpretado que funciona en la gran mayoría de navegadores y que hace posible el funcionamiento del 85% de los sitios web de la red de redes." />
+
+
+
+<meta name="generator" content="Hugo 0.38.2" />
+
+
+<link rel="shortcut icon" href="https://davidcastilloc.github.io/img/defaultFav.ico">
+
+
+<link rel="canonical" href="https://davidcastilloc.github.io/post/javascript-dom/" />
+<link rel="alternative" href="/index.xml" title="DaviDJose | Informático" type="application/atom+xml" />
+
+</head>
+
+<body>
+	<div class="bg"><script type="text/javascript">
+	var dreamBodyBgSwitchIndex = 0
+	if(colorBG) {
+		var dreamBGGradients = [
+			[],
+			['#40e0d0', '#ff8c00', '#ff0080'], 
+			['#3e5151', '#decba4'], 
+			['#11998e', '#38ef7d'], 
+			['#108dc7', '#ef8e38'], 
+			['#fc5c7d', '#6a82fb'], 
+			['#fc466b', '#3f5efb'], 
+			['#c94b4b', '#4b134f'], 
+			['#23074d', '#cc5333'], 
+		]
+		var dreamBody = $('.bg')
+		var dreamFront = $('.pusher .front')
+		var dreamBack = $('.pusher .back')
+		var dreamPrevBgIndex = 0
+		var dreamBodyBgSwitch = []
+		var dreamBg = dreamBGGradients[getRandomInt(0, dreamBGGradients.length)]	
+
+		dreamBodyBgSwitch.push(dreamBg)
+		setBackground(dreamFront, dreamBg)
+		setBackground(dreamBody, dreamBg)
+		dreamBg = dreamBGGradients[getRandomInt(0, dreamBGGradients.length)]
+		dreamBodyBgSwitch.push(dreamBg)
+		setBackground(dreamBack, dreamBg)
+	}
+	else {
+		var blurEff =  3 
+		if( false ) {	
+			var images = ""
+			var randomNumber = Math.floor(Math.random() * images.length)
+			bgImage = 'url(' + images[randomNumber] + ')'
+		}
+		else
+			bgImage = 'url(' + "https://raw.githubusercontent.com/UtkarshVerma/hugo-dream-plus/master/static/img/bg1.jpeg" + ')'
+		console.log('Current background: ' + bgImage.substring(bgImage.indexOf('bg'),bgImage.length -1) )
+		var target = document.getElementsByClassName('bg')[0]
+		target.setAttribute('style', 'background-image:' + bgImage +' !important; filter:' + 'blur(' + blurEff + 'px)')
+	}	
+</script>
+</div>
+	<div id="sidebar" class="ui sidebar inverted vertical menu left">
+	<section id="author" class="ui top attached center aligned inverted segment">
+	<div class="ui small circular image">
+		
+		<img src="/images/avatar.jpg">
+		
+	</div>
+	<h3 class="ui header">David Castillo<div class="sub header" style="color: white;">Un apasionado por la informática y la programación que no descansa.</div>
+	</h3>
+</section>
+
+	
+	
+	<section class="ui attached center aligned inverted segment sidebar-dream-tags">
+		
+<a class="ui label" href="/tags/javascript" title="javascript">javascript</a>
+
+<a class="ui label" href="/tags/programacion" title="programacion">programacion</a>
+
+<a class="ui label" href="/tags/seguridad" title="seguridad">seguridad</a>
+
+
+	</section>
+	
+	
+	
+	
+	<section class="ui attached inverted segment sidebar-dream-categories">
+		<div class="ui inverted accordion">
+				
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/programacion">programacion</a>     	
+</div>
+
+<div class="content">    		
+	<a class="item" href="https://davidcastilloc.github.io/post/javascript-dom/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Hackea el DOM Con JavaScript!</p>
+		</div>
+	</a>
+</div>
+
+
+
+		</div>
+	</section>
+	
+		
+	<section id="footer" class="ui bottom attached center aligned inverted segment">
+	
+	<p>© 2018 DaviDJose | Informático</p>
+	
+</section>
+
+
+</div>
+
+	<div class="pusher">
+		<div class="flipper">
+			<div class="front">
+				
+<nav class="ui top secondary menu">
+	<div class="item">
+		<i id="ico"class="inverted big link bullseye icon dream-flip-toggle" title="Acerca de Mi"></i>
+	</div>
+	
+	
+	<div class="item">
+		<a href="/">
+			<i id="home-ico" class="inverted big link home icon" title="Home"></i>
+		</a>
+	</div>
+	
+	
+	
+	<div class="item">
+		<a href="/post">
+			<i id="archive-ico" class="inverted big link archive icon" title="Posts"></i>
+		</a>
+	</div>
+	
+	
+	
+	<div class="item">
+		<a href="/tags">
+			<i id="tags-ico"class="inverted big link tags icon" title="Todas las Etiquetas"></i>
+		</a>
+	</div>
+	
+	
+	
+	<div class="item">
+		<a href="/categories">
+			<i id="cat-ico"class="inverted big link cubes icon" title="Todas las Categorias"></i>
+		</a>
+  </div>
+	
+
+	
+	
+	
+	<div id="sidebarBtn" class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
+		<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
+	</div>
+	
+</nav>
+
+ 
+<div class="ui centered grid">
+	<div id="mobile" class="sixteen wide mobile fifteen wide tablet four wide computer column">		
+		<div class="ui inverted accordion">
+	<div id="header" class="ui inverted segment">
+		<section id="author" class="ui top attached center aligned inverted segment">
+	<div class="ui small circular image">
+		
+		<img src="/images/avatar.jpg">
+		
+	</div>
+	<h3 class="ui header">David Castillo<div class="sub header" style="color: white;">Un apasionado por la informática y la programación que no descansa.</div>
+	</h3>
+</section>
+
+		<div class=" title header-title">
+			
+			<div id="tag-category-pop" class="ui red right corner label">		
+				<i class="link pointing down icon" title="Click aqui para ver categorias y etiquetas"></i>		
+			</div>
+			
+		</div>
+		<div id="tag-category" class=" content">
+			
+			
+			<section class="ui attached center aligned inverted segment dream-tags">
+				
+<a class="ui label" href="/tags/javascript" title="javascript">javascript</a>
+
+<a class="ui label" href="/tags/programacion" title="programacion">programacion</a>
+
+<a class="ui label" href="/tags/seguridad" title="seguridad">seguridad</a>
+
+
+			</section>
+			
+			
+			
+			
+			<section class="ui attached inverted segment dream-categories">
+					
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/programacion">programacion</a>     	
+</div>
+
+<div class="content">    		
+	<a class="item" href="https://davidcastilloc.github.io/post/javascript-dom/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Hackea el DOM Con JavaScript!</p>
+		</div>
+	</a>
+</div>
+
+
+
+			</section>
+			
+			
+		</div>
+		<section id="footer" class="ui bottom attached center aligned inverted segment">
+	
+	<p>© 2018 DaviDJose | Informático</p>
+	
+</section>
+
+
+	</div>
+</div>
+
+	</div>
+	<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
+		<section id="post-content" class="ui secondary top attached black segment">
+			<header>
+				<h1 id="post-head" class="ui header">
+					Hackea el DOM Con JavaScript!
+					<div id= "post-subhead" class="sub header">@ David Castillo · Nov 8, 2018 · 5 minutos de lectura · Ultima Actualizacion Nov 8, 2018</div>
+				</h1>
+				<hr>
+				
+				
+				<div class="toc">
+					<nav id="TableOfContents">
+<ul>
+<li><a href="#bonito-javascript">Bonito JavaScript</a>
+<ul>
+<li><a href="#practicar-es-la-clave">Practicar es la clave</a></li>
+<li><a href="#developer-tools">¡Developer Tools!</a></li>
+</ul></li>
+<li><a href="#dom-document-object-model">DOM (Document Object Model)</a>
+<ul>
+<li><a href="#alterando-el-dom">Alterando el DOM</a>
+<ul>
+<li><a href="#código-html">Código HTML</a></li>
+<li><a href="#código-javascript">Código JavaScript</a></li>
+<li><a href="#resultado-dom">Resultado DOM</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#que-significa-hackdom">¿Que significa HackDom?</a>
+<ul>
+<li><a href="#cómo-es-posible-esto">¿Cómo es posible esto?</a></li>
+<li><a href="#ejemplo-y-codigo">Ejemplo y codigo</a></li>
+<li><a href="#codigo-explicado">Codigo explicado</a></li>
+<li><a href="#resultado-hackdom">Resultado HackDom</a></li>
+</ul></li>
+<li><a href="#concluyendo">Concluyendo</a></li>
+</ul>
+</nav>
+				</div>
+				
+				
+			</header>
+			<article class="post-content twemoji">
+				
+
+<p>El día de hoy voy a ilustrarte en un lenguaje en el que he estado trabajando
+últimamente, algo que te puede ayudar a crear en tu navegador sin tener que
+instalar nada, y lo mejor es que no necesitas internet para hacerlo
+funcionar.</p>
+
+<p>Se trata de <a href="https://es.wikipedia.org/wiki/JavaScript" title="JavaScript en Wikipedia.">JavaScript</a>, un lenguaje
+de programación interpretado que funciona en la gran mayoría de navegadores y
+que hace posible el funcionamiento del 85% de los sitios web de la red de redes.</p>
+
+<h1 id="bonito-javascript">Bonito JavaScript</h1>
+
+<p><a href="https://es.wikipedia.org/wiki/JavaScript" title="JavaScript en Wikipedia.">JavaScript</a> es un lenguaje de
+programación muy bonito, su sintaxis es bastante amigable ya que no es
+estrictamente tipado. Hacer código con JavaScript es bastante sencillo solo
+debemos escribir una instrucción y el motor del navegador se encarga de
+interpretarla para hacerla posible y funcional, no necesitamos compilar.</p>
+
+<p>Un ejemplo muy sencillo de <a href="https://es.wikipedia.org/wiki/JavaScript" title="JavaScript en Wikipedia.">JavaScript</a> es el clásico de todos
+los lenguajes <strong><em>&ldquo;Hola Mundo!&rdquo;</em></strong></p>
+
+<pre><code class="language-javascript">alert(&quot;Hola Mundo&quot;); //función para mostrar alerta!
+</code></pre>
+
+<blockquote>
+<p>Aquí solo invocamos una de varias funciones nativas del lenguaje, esta tiene como finalidad mostrar una alerta en la ventana del navegador.</p>
+</blockquote>
+
+<h2 id="practicar-es-la-clave">Practicar es la clave</h2>
+
+<p>La mejor forma de aprender cualquier lenguaje de programación es practicar,
+practicar y seguir haciéndolo hasta que puedas escribir código sin necesidad de
+leer documentación.</p>
+
+<p>Para practicar JavaScript usaremos nuestro navegador necesitaremos crear una
+pestaña blanca.</p>
+
+<p>En la Barra de direcciones escribimos <code>about:blank</code> luego presiona ↩️</p>
+
+<blockquote>
+<p>Tendrás una pestaña con un lienzo blanco similar a esté.</p>
+</blockquote>
+
+<p><img src="/images/hack-dom/about-blank2.png" alt="About Blank" /></p>
+
+<h2 id="developer-tools">¡Developer Tools!</h2>
+
+<ul>
+<li>Presionamos F12 (para mostrar el DeveloperTools).</li>
+<li>Seleccionamos la sección <strong>Console</strong> (Para Mostrar la Consola).</li>
+<li>En el recuadro de abajo colocas la sentencia de <strong>JavaScript</strong> que quieras.</li>
+<li>Presionas <strong>ENTER</strong> para ejecutar la instrucción o serie de instrucciones.</li>
+</ul>
+
+<p><img src="/images/hack-dom/alert.png" alt="DeveloperTools" /></p>
+
+<blockquote>
+<p>Ten siempre en cuenta esto a la hora de las practicas.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="dom-document-object-model">DOM (Document Object Model)</h1>
+
+<p>La Interface <strong>DOM</strong> nos permite manipular completamente el documento HTML que
+este cargado en el navegador.</p>
+
+<p>La estructura DOM nos permite encontrar los elementos de la página de una manera sencilla, mediante unas funciones o métodos predeterminados.</p>
+
+<p>Al trabajar con un elemento de la página, debemos dar siempre dos pasos, el
+primero es acceder al elemento en sí, para eso tenemos 4 métodos disponibles.</p>
+
+<ul>
+<li><code>document.getElementByID()</code></li>
+<li><code>document.getElementsByClassName()</code></li>
+<li><code>document.getElementsByName()</code></li>
+<li><code>document.getElementsByTagName()</code></li>
+</ul>
+
+<blockquote>
+<p>Los diferentes métodos en realidad son funciones del <strong>DOM</strong> y más concretamente del objeto <strong>document</strong>, por lo que al escribirlas deben llevar siempre la palabra <strong>document</strong> seguida de un punto, más adelante ampliare el funcionamiento de estos métodos.</p>
+</blockquote>
+
+<p>Después de acceder al elemento lo almacenamos en una variable, desde esa
+variable podemos efectuar la operación que necesitemos, ya sea borrar, leer o
+modificar el contenido dentro del elemento.</p>
+
+<h2 id="alterando-el-dom">Alterando el DOM</h2>
+
+<p>Veamos un ejemplo práctico para el método <code>getElementById()</code>:</p>
+
+<h3 id="código-html">Código HTML</h3>
+
+<pre><code class="language-html">&lt;h1 id=&quot;alterable&quot;&gt; Elemento sin alterar. &lt;/h1&gt;
+&lt;button onclick=&quot;alterar()&quot;&gt; Ejecutar JavaScript &lt;/button&gt;
+</code></pre>
+
+<h3 id="código-javascript">Código JavaScript</h3>
+
+<pre><code class="language-javascript">function alterar() {
+    var elemento = document.getElementById('alterable');
+    elemento.innerHtml = '&lt;h1&gt;ALTERADO!&lt;/h1&gt;';
+    var elemento = document.getElementById('alterable');
+    elemento.innerHTML = 'ALTERADO!';
+}
+</code></pre>
+
+<h3 id="resultado-dom">Resultado DOM</h3>
+
+<dl>
+    <div class="ui segment">
+        <h1 id="alterable">Elemento sin alterar.</h1>
+        <button class="ui label violet" onclick="alterar()">Click aqui para alterar el elemento
+        </button>
+    </div>
+    <script>
+        function alterar() {
+            var elemento = document.getElementById('alterable');
+            elemento.innerHtml = '<h1>ALTERADO!</h1>';
+            var elemento = document.getElementById('alterable');
+            elemento.innerHTML = 'ALTERADO!';
+        }
+    </script>
+</dl>
+
+<blockquote>
+<p>Como puedes ver en el ejemplo anterior al hacer clic en el botón se altera el contenido de la etiqueta <code>&lt;h1&gt;&lt;/h1&gt;</code> apuntando a su identificador y demostrando el funcionamiento del método anteriormente mencionado. Es importante tener en cuenta que el código JavaScript Puede ser inyectado desde una extensión del navegador y ejecutado desde el momento en que carga el sitio web.</p>
+</blockquote>
+
+<p>Teniendo todo esto en cuenta.</p>
+
+<hr />
+
+<h1 id="que-significa-hackdom">¿Que significa HackDom?</h1>
+
+<p>La frase viene de que desarrolladores abusaban de los métodos de esta interface
+para crear extensiones que robaban datos de los usuarios en navegadores
+conocidos.</p>
+
+<h2 id="cómo-es-posible-esto">¿Cómo es posible esto?</h2>
+
+<p>Creaban un fichero de JavaScript y dentro usaban funciones como <code>getElementsbyTag(&quot;input&quot;)</code> para tener acceso a todas las etiquetas input del
+formulario de tus sitios webs preferidos, este código JavaScript se empaquetaba
+en una extensión y se distribuía en la tienda de extensiones de tu navegador.</p>
+
+<p>En algunos casos se detectó que la extensión esperaba a que cargaras un sitio
+web conocido para inyectar el código malicioso y capturar los datos, luego estos
+datos eran enviados a un servidor <strong>(Todo en el mismo código de JavaScript)</strong>.</p>
+
+<h2 id="ejemplo-y-codigo">Ejemplo y codigo</h2>
+
+<p>Veamos un ejemplo del código para acceder a las etiquetas input.</p>
+
+<pre><code class="language-javascript">function hackdom() {
+    /*Llamo a la funcion getElementsByTagName();
+    Le paso como parametro &quot;input&quot;
+    */
+    var inputs = document.getElementsByTagName(&quot;input&quot;);
+    //Luego recorro todos los inputs e imprimo sus valores en la consola.
+    for (i=0 ; i&lt;inputs.length ; i++) {
+        console.log(inputs[i].placeholder + &quot;: &quot; + inputs[i].value+&quot;\n&quot;);
+    }
+}
+</code></pre>
+
+<blockquote>
+<p>Con esta funcion de JavaScript obtienes la informacion de todos los inputs en el <strong>DOM</strong> Puedes copiar este bloque de código para probarlo desde la consola.</p>
+</blockquote>
+
+<h2 id="codigo-explicado">Codigo explicado</h2>
+
+<ol>
+<li>Declaro una variable y dentro de ella llamo al método getElementsByTagName().</li>
+<li>Le paso como argumento &ldquo;input&rdquo; para que retorne un arreglo con todos los inputs del documento HTML.</li>
+<li>Recorro el arreglo que devuelve con un ciclo for, imprimiendo el resultado de los inputs.</li>
+</ol>
+
+<h2 id="resultado-hackdom">Resultado HackDom</h2>
+
+<blockquote>
+<p>Inserta informacion en el formulario y presiona HackDom.</p>
+</blockquote>
+
+<dl>
+<input type="text" placeholder="Usuario"></input>
+<p>
+<input type="password" placeholder="Password"></input>
+<p>
+<button onclick="hackdom()" class="ui label violet">HackDom</button>
+<pre id="res" style="background-color:hsl(208, 95%, 8%,0.95); color:white; " hidden>
+</pre>
+
+<script>
+    function hackdom() {
+    var res = document.getElementById("res");
+    var inputs = document.getElementsByTagName("input");
+    res.innerHTML="";
+    res.hidden = false;
+    res.className ="fadeIn animated"
+        for (i=0 ; i<inputs.length ; i++) {
+            res.innerHTML+=inputs[i].placeholder +": "+ inputs[i].value+"\n";
+        }
+    }
+</script>
+</dl>
+
+<hr />
+
+<h1 id="concluyendo">Concluyendo</h1>
+
+<p>Hoy en día los navegadores han doblado la seguridad en sus tiendas de extensiones debido al problema del abuso de extensiones que secuestran tu navegador para intentar robar tus datos y colocar publicidad.</p>
+
+<p>Me interese en el tema de <strong>HackDom</strong> porque es algo sencillo de poner en práctica en tu navegador y demuestra uno de los problemas más complicados de los navegadores webs las <strong>Extensiones Maliciosas</strong> recomiendo que pongas atención en las extensiones que instalas en tu navegador, en otro post estare hablando sobre como protejer y limpiar tu navegador.</p>
+
+<p>Tambien estaré profundizando más sobre JavaScript si tienes alguna duda házmelo saber en la caja de comentarios.</p>
+
+<p>Tenía tiempo armando este blog, no es fácil pero ya está mi primer post, te soy
+realmente sincero estoy muy feliz de estar escribiendo para ti, espero te puedas
+llevar algo que te sirva y que entiendas mi objetivo principal, <strong>ENSEÑAR</strong>.</p>
+
+<p><strong>Gracias por leerme!</strong>  😀</p>
+
+			</article>
+		</section>
+		<footer class="ui secondary attached segment dream-tags">
+			
+			
+			<a class="ui label" href="/tags/programacion" title="programacion">programacion</a>
+			
+			<a class="ui label" href="/tags/javascript" title="javascript">javascript</a>
+			
+			<a class="ui label" href="/tags/seguridad" title="seguridad">seguridad</a>
+			
+			
+		</footer>
+		
+		<footer id="post-meta" class="clearfix">
+	
+		<a href="https://twitter.com/xxdjdavidxx">
+			<div>
+				
+				<img class="avatar" src="https://davidcastilloc.github.io/images/avatar.jpg">
+				
+				<span class="dark">David Castillo</span>
+				<span class="sub">Un apasionado por la informática y la programación que no descansa.</span>
+			</div>
+		</a>
+	 
+	<section id="sharing">
+		<div class="facebook" href="#" onclick="window.open(
+				'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+				'facebook-share-dialog',
+				'width=626,height=436'); return false;">
+			<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
+		</div>
+		<div class="twitter" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Hackea el DOM Con JavaScript! &quot; by @xxdjdavidxx https:\/\/davidcastilloc.github.io\/post\/javascript-dom\/','_self')">
+			<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
+		</div>
+	</section>
+</footer>
+
+		
+
+		
+		<footer class="ui secondary bottom attached stacked segment">
+	<div id="disqus_thread"></div>
+	<script>
+		
+
+		var disqus_config = function () {
+			this.page.url = 'https:\/\/davidcastilloc.github.io\/post\/javascript-dom\/';  
+			this.page.identifier = '\/post\/javascript-dom\/'; 
+    };
+		(function() { 
+    	var d = document, s = d.createElement('script');
+    	s.src = 'https://' + 'davidjinformatico' + '.disqus.com/embed.js';
+    	s.setAttribute('data-timestamp', +new Date());
+    	(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</footer>
+
+		
+
+		
+		<footer class="ui secondary attached segment">
+			DaviDJose | Informático Derechos Reservados
+		</footer>
+		
+	</div>
+</div>
+
+			</div>
+			<div class="back">
+				<nav class="ui top secondary menu">
+	<div class="item">
+		<i id="ico" class="inverted big link bullseye icon dream-flip-toggle" title="Acerca de Mi"></i>
+	</div>
+	
+<div class="item">
+	<a href="https://github.com/davidcastilloc" target="_blank">
+		<i id="ico" class="inverted big link github icon" title="GitHub"></i>
+	</a>
+</div>
+
+
+
+<div class="item">
+	<a href="mailto:vikruzdavid@gmail.com">
+		<i id="ico" class="inverted big link mail icon" title="Email"></i>
+	</a>
+</div>
+
+
+
+<div class="item">
+	<a href="https://twitter.com/xxdjdavidxx" target="_blank">
+		<i id="ico" class="inverted big link twitter icon" title="Twitter"></i>
+	</a>
+</div>
+
+
+
+
+
+<div class="item">
+	<a href="https://www.facebook.com/davidjcinformatico" target="_blank">
+		<i id="ico" class="inverted big link facebook icon" title="Facebook"></i>
+	</a>
+</div>
+
+
+
+
+
+<div class="item">
+	<a href="https://www.linkedin.com/in/david-castillo-cirilo-873676174" target="_blank">
+		<i id="ico" class="inverted big link linkedin icon" title="linkedin"></i>
+	</a>
+</div>
+
+
+
+
+
+
+
+
+</nav>
+
+<div class="ui centered grid about">
+	<div id="abt" class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
+		<section class="ui stacked segments">
+			<div class="ui inverted segment">
+	<article class="twemoji">
+		<h1>¿Entonces, quién soy yo?</h1>
+
+<hr />
+
+<p><br>
+Mi Nombre es David Jose, solo soy un chico más al que le fascina escribir software ya sea web o apps de escritorio, siento la necesidad de enseñar un poco lo que he aprendido a lo largo de estos años con aquellos que no han visto el maravilloso mundo de la informática en general y la programación.</p>
+
+<p>¡Escribir código es lo que me entusiasma y a lo que realmente me dedico!
+Dentro de mis especialidades está el desarrollo web y aplicaciones de escritorio nativas, últimamente me ha estado interesando el desarrollo de aplicaciones hibridas y el desarrollo web en general.</p>
+
+<p>Empecé en el 2009 con Pascal, C, C++ y vb6, luego escalé a .NET, C#, PHP todo esto lo aprendí de forma autodidacta y con la ayuda de muchos foros y blogs de la red de redes, hoy en día soy desarrollador <strong>FullStack</strong> de Ruby y Python tambien manejo un poco de GoLang, estoy estudiando Java y con todas las ganas de seguir aprendiendo cada día más.</p>
+
+<p>¿Deseas conocerme? Usa los enlaces de la barra superior para ver mis perfiles.</p>
+
+<p>También puedes apoyar mis proyectos personales, Sinceramente lo apreciaría.</p>
+
+	</article>
+</div>
+
+			
+			<footer class="ui secondary segment">
+				DaviDJose | Informático Derechos Reservados
+			</footer>
+    	
+		</section>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('.dream-flip-toggle').click(function () {
+		var target = $('.pusher')
+		if (dreamBodyBgSwitchIndex === 0) {
+    	if(colorBG)
+    	 	setBackground(dreamBody, dreamBodyBgSwitch[1])
+			dreamBodyBgSwitchIndex = 1
+			target.toggleClass('flip-it')
+			setTimeout( function () {
+				$('.front').css('display','none')
+				$('.back').css('display','block')
+			}, 300)
+	 	}
+    else {
+    	if(colorBG)
+    		setBackground(dreamBody, dreamBodyBgSwitch[0])
+     	dreamBodyBgSwitchIndex = 0     	
+     	target.toggleClass('flip-it')   
+     	setTimeout( function (){
+     		$('.front').css('display','block')
+				$('.back').css('display','none')
+			}, 300)			
+		}
+	})
+</script>
+
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="/js/twemoji.min.js"></script>
+<script type="text/javascript">
+(function init(){
+	console.log('Twemoji up and making stuff colourful!')
+	var classes = (document.getElementsByClassName('twemoji'))
+	for(var i = 0; i < classes.length; i++)
+		twemoji.parse(classes[i]);                
+})()
+</script>
+
+	
+</body>
+
+</html>

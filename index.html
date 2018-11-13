@@ -1,76 +1,454 @@
-<html lang="es">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>DaviDJose | Informático</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-      <link rel="icon" href="assets/img/icon.png">
-    </head>
-    <body>
-      <section class="hero is-primary is-medium is-bold">
-        <div class="hero-head animated fadeInDown">
-          <header>
-            <nav class="navbar " role="navigation" aria-label="main navigation">
-              <div class="navbar-brand">
-                <a class="navbar-item" href="" >
-                  <img src="assets/img/nav.png" class="logo">
-                </a>
-              </div>
-            </div>
-          </nav>
-        </header>
-        <!-- /header -->
+<!DOCTYPE html>
+<html lang="es-VE">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DaviDJose | Informático</title>
+	<link rel="stylesheet" type="text/css" href="/css/semantic.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/site.css" />
+
+			 
+<link rel="stylesheet" type="text/css" href="/css/animate.css">
+	
+
+			 
+<link rel="stylesheet" type="text/css" href="/css/prism.css">
+	
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/semantic.min.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+
+	
+<script src="/js/prism.js"></script>
+	
+
+
+<script type="text/javascript">
+	var enabledPost=true 
+	var colorBG= true  
+	var enabledDimmer =  true 
+	var shToken=""
+	var shDomains=""    
+	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
+</script>
+
+	
+	
+	<meta name="author" content="David Castillo" />
+	<meta name="description" content="Un blog donde estare colgando cosas que me parezcan interesantes." />
+
+
+
+<meta name="generator" content="Hugo 0.38.2" />
+
+
+<link rel="shortcut icon" href="https://davidcastilloc.github.io/img/defaultFav.ico">
+
+
+<link rel="canonical" href="https://davidcastilloc.github.io/" />
+<link rel="alternative" href="/index.xml" title="DaviDJose | Informático" type="application/atom+xml" />
+
+</head>
+
+<body>
+	<div class="bg"><script type="text/javascript">
+	var dreamBodyBgSwitchIndex = 0
+	if(colorBG) {
+		var dreamBGGradients = [
+			[],
+			['#40e0d0', '#ff8c00', '#ff0080'], 
+			['#3e5151', '#decba4'], 
+			['#11998e', '#38ef7d'], 
+			['#108dc7', '#ef8e38'], 
+			['#fc5c7d', '#6a82fb'], 
+			['#fc466b', '#3f5efb'], 
+			['#c94b4b', '#4b134f'], 
+			['#23074d', '#cc5333'], 
+		]
+		var dreamBody = $('.bg')
+		var dreamFront = $('.pusher .front')
+		var dreamBack = $('.pusher .back')
+		var dreamPrevBgIndex = 0
+		var dreamBodyBgSwitch = []
+		var dreamBg = dreamBGGradients[getRandomInt(0, dreamBGGradients.length)]	
+
+		dreamBodyBgSwitch.push(dreamBg)
+		setBackground(dreamFront, dreamBg)
+		setBackground(dreamBody, dreamBg)
+		dreamBg = dreamBGGradients[getRandomInt(0, dreamBGGradients.length)]
+		dreamBodyBgSwitch.push(dreamBg)
+		setBackground(dreamBack, dreamBg)
+	}
+	else {
+		var blurEff =  3 
+		if( false ) {	
+			var images = ""
+			var randomNumber = Math.floor(Math.random() * images.length)
+			bgImage = 'url(' + images[randomNumber] + ')'
+		}
+		else
+			bgImage = 'url(' + "https://raw.githubusercontent.com/UtkarshVerma/hugo-dream-plus/master/static/img/bg1.jpeg" + ')'
+		console.log('Current background: ' + bgImage.substring(bgImage.indexOf('bg'),bgImage.length -1) )
+		var target = document.getElementsByClassName('bg')[0]
+		target.setAttribute('style', 'background-image:' + bgImage +' !important; filter:' + 'blur(' + blurEff + 'px)')
+	}	
+</script>
+</div>
+	<div id="sidebar" class="ui sidebar inverted vertical menu left">
+	<section id="author" class="ui top attached center aligned inverted segment">
+	<div class="ui small circular image">
+		
+		<img src="/images/avatar.jpg">
+		
+	</div>
+	<h3 class="ui header">David Castillo<div class="sub header" style="color: white;">Un apasionado por la informática y la programación que no descansa.</div>
+	</h3>
+</section>
+
+	
+	
+	<section class="ui attached center aligned inverted segment sidebar-dream-tags">
+		
+<a class="ui label" href="/tags/javascript" title="javascript">javascript</a>
+
+<a class="ui label" href="/tags/programacion" title="programacion">programacion</a>
+
+<a class="ui label" href="/tags/seguridad" title="seguridad">seguridad</a>
+
+
+	</section>
+	
+	
+	
+	
+	<section class="ui attached inverted segment sidebar-dream-categories">
+		<div class="ui inverted accordion">
+				
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/programacion">programacion</a>     	
+</div>
+
+<div class="content">    		
+	<a class="item" href="https://davidcastilloc.github.io/post/javascript-dom/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Hackea el DOM Con JavaScript!</p>
+		</div>
+	</a>
+</div>
+
+
+
+		</div>
+	</section>
+	
+		
+	<section id="footer" class="ui bottom attached center aligned inverted segment">
+	
+	<p>© 2018 DaviDJose | Informático</p>
+	
+</section>
+
+
+</div>
+
+	<div class="pusher">
+		<div class="flipper">
+			<div class="front">
+				
+<nav class="ui top secondary menu">
+	<div class="item">
+		<i id="ico"class="inverted big link bullseye icon dream-flip-toggle" title="Acerca de Mi"></i>
+	</div>
+	
+	
+	
+	
+	<div class="item">
+		<a href="/post">
+			<i id="archive-ico" class="inverted big link archive icon" title="Posts"></i>
+		</a>
+	</div>
+	
+	
+	
+	<div class="item">
+		<a href="/tags">
+			<i id="tags-ico"class="inverted big link tags icon" title="Todas las Etiquetas"></i>
+		</a>
+	</div>
+	
+	
+	
+	<div class="item">
+		<a href="/categories">
+			<i id="cat-ico"class="inverted big link cubes icon" title="Todas las Categorias"></i>
+		</a>
+  </div>
+	
+
+	
+	
+	<div class="item">
+		
+		<i id="prevd-ico" class="disabled inverted big chevron circle left icon" title="Pagina Anterior"></i>
+  	
+  </div>
+	<div class="item">
+			
+		<i id="nextd-ico" class="disabled inverted big chevron circle right icon" title="Pagina Siguiente"></i>
+		
+	</div>
+	
+	
+	
+</nav>
+
+ 
+<div class="ui centered grid">
+	<div class="sixteen wide mobile fifteen wide tablet four wide computer column">
+		<div class="ui inverted accordion">
+	<div id="header" class="ui inverted segment">
+		<section id="author" class="ui top attached center aligned inverted segment">
+	<div class="ui small circular image">
+		
+		<img src="/images/avatar.jpg">
+		
+	</div>
+	<h3 class="ui header">David Castillo<div class="sub header" style="color: white;">Un apasionado por la informática y la programación que no descansa.</div>
+	</h3>
+</section>
+
+		<div class="active title header-title">
+			
+			<div id="tag-category-pop" class="ui red right corner label">		
+				<i class="link pointing down icon" title="Click aqui para ver categorias y etiquetas"></i>		
+			</div>
+			
+		</div>
+		<div id="tag-category" class="active content">
+			
+			
+			<section class="ui attached center aligned inverted segment dream-tags">
+				
+<a class="ui label" href="/tags/javascript" title="javascript">javascript</a>
+
+<a class="ui label" href="/tags/programacion" title="programacion">programacion</a>
+
+<a class="ui label" href="/tags/seguridad" title="seguridad">seguridad</a>
+
+
+			</section>
+			
+			
+			
+			
+			<section class="ui attached inverted segment dream-categories">
+					
+<div class="title">
+	<i class="dropdown icon"></i>
+	<a class="link" href="/categories/programacion">programacion</a>     	
+</div>
+
+<div class="content">    		
+	<a class="item" href="https://davidcastilloc.github.io/post/javascript-dom/">
+		<div>
+			<i class="cocktail icon"></i>
+			<p>Hackea el DOM Con JavaScript!</p>
+		</div>
+	</a>
+</div>
+
+
+
+			</section>
+			
+			
+		</div>
+		<section id="footer" class="ui bottom attached center aligned inverted segment">
+	
+	<p>© 2018 DaviDJose | Informático</p>
+	
+</section>
+
+
+	</div>
+</div>
+
+	</div>
+	<div class="sixteen wide mobile fifteen wide tablet eleven wide computer column post-list">
+		<div class="ui two stackable cards">
+			
+	
+	
+		<article class="black card twemoji">  
+    <div class="image">	
+           <div class="ui top right attached black label">5 minutos de lectura</div>          
+          <div class="ui bottom left attached black label">Nov 8, 2018</div>        
+    <div class="ui dimmer"> 
+      <div class="content">
+        <div class="center" style="padding: 1.5em 1em 1em 1em;">
+          <a href= https://davidcastilloc.github.io/post/javascript-dom/>
+          <h2 class="ui header" style="color: white;padding-top: 0em">Hackea el DOM Con JavaScript!</h2>
+          </a>
+          <p style="padding: 5px;">Como alterar un sitio web con JavaScript</p>        
+          <div class="ui top right attached black label">5 minutos de lectura</div>          
+          <div class="ui bottom left attached black label">Nov 8, 2018</div>                 
+	  <p>@ David Castillo</p>
+          </div>      
       </div>
-      <div class="hero-body">
-        <div class="container has-text-centered animated fadeInDown">
-          <div class="columns">
-            <div class="column">
-              <img id="profile" class="is-radiusless is-centered animated slideInLeft" src="assets/img/profile.jpg">
-              <h1 class="title is-1 is-spaced ">DaviDJose | Informático </h1>
-              <h2 class="subtitle"> Un informático en su hábitat natural.</h2>
-              <h2 class="subtitle"> Sitio en construcción.</h2>
-              <div id="countdown"></div>
-              <h2 id="subtitle"></h2>
-              <div class="container">
-              	<a href="https://gitlab.com/vikruz" target="_blank">
-                  <span id="btngitlab" class="button is-info is-medium"><i class="fa fa-gitlab" aria-hidden="true"></i>&#160; GitLab </span>
-                </a>
-                <a href="https://www.facebook.com/davidjcinformatico" target="_blank">
-                  <span id="btnfacebook" class="button is-info is-medium"><i class="fa fa-facebook" aria-hidden="true"></i>&#160; DaviDJCInformatico</span>
-                </a>
-                <a href="https://twitter.com/xxdjdavidxx" target="_blank">
-                  <span id="btntwitter" class="button is-info is-medium"><i class="fa fa-twitter" aria-hidden="true"></i>&#160; @xXDjDavidXx</span>
-                </a>
-                <a href="https://www.instagram.com/xxdavidjosexx/" target="_blank">
-                  <span id="btninstagram" class="button is-info is-medium "><i class="fa fa-instagram" aria-hidden="true"></i>&#160; @xXDaviDJoseXx</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="footer animated fadeInUp">
-      <div class="container">
-        <div class="content has-text-centered">
-          <p>
-            El mundo como lo hemos creado es un proceso de nuestro pensamiento. No puede ser cambiado sin cambiar nuestro pensamiento.<strong>&#160;Albert Einstein</strong>
-          </p>
-        </div>
-      </div>
-    </footer>
-    <script src="assets/js/main.js" type="text/javascript" charset="utf-8" async defer></script>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107711946-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-107711946-1');
-    </script>
-  </body>
+      </div>  
+
+    
+    <img src="https://davidcastilloc.github.io/images/hack-dom/hckdom-tmb.png" alt="Hackea el DOM Con JavaScript!">
+    
+  </div>
+</article>
+
+	
+
+
+		</div>
+	</div>
+</div>
+
+			</div>
+			<div class="back">
+				<nav class="ui top secondary menu">
+	<div class="item">
+		<i id="ico" class="inverted big link bullseye icon dream-flip-toggle" title="Acerca de Mi"></i>
+	</div>
+	
+<div class="item">
+	<a href="https://github.com/davidcastilloc" target="_blank">
+		<i id="ico" class="inverted big link github icon" title="GitHub"></i>
+	</a>
+</div>
+
+
+
+<div class="item">
+	<a href="mailto:vikruzdavid@gmail.com">
+		<i id="ico" class="inverted big link mail icon" title="Email"></i>
+	</a>
+</div>
+
+
+
+<div class="item">
+	<a href="https://twitter.com/xxdjdavidxx" target="_blank">
+		<i id="ico" class="inverted big link twitter icon" title="Twitter"></i>
+	</a>
+</div>
+
+
+
+
+
+<div class="item">
+	<a href="https://www.facebook.com/davidjcinformatico" target="_blank">
+		<i id="ico" class="inverted big link facebook icon" title="Facebook"></i>
+	</a>
+</div>
+
+
+
+
+
+<div class="item">
+	<a href="https://www.linkedin.com/in/david-castillo-cirilo-873676174" target="_blank">
+		<i id="ico" class="inverted big link linkedin icon" title="linkedin"></i>
+	</a>
+</div>
+
+
+
+
+
+
+
+
+</nav>
+
+<div class="ui centered grid about">
+	<div id="abt" class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
+		<section class="ui stacked segments">
+			<div class="ui inverted segment">
+	<article class="twemoji">
+		<h1>¿Entonces, quién soy yo?</h1>
+
+<hr />
+
+<p><br>
+Mi Nombre es David Jose, solo soy un chico más al que le fascina escribir software ya sea web o apps de escritorio, siento la necesidad de enseñar un poco lo que he aprendido a lo largo de estos años con aquellos que no han visto el maravilloso mundo de la informática en general y la programación.</p>
+
+<p>¡Escribir código es lo que me entusiasma y a lo que realmente me dedico!
+Dentro de mis especialidades está el desarrollo web y aplicaciones de escritorio nativas, últimamente me ha estado interesando el desarrollo de aplicaciones hibridas y el desarrollo web en general.</p>
+
+<p>Empecé en el 2009 con Pascal, C, C++ y vb6, luego escalé a .NET, C#, PHP todo esto lo aprendí de forma autodidacta y con la ayuda de muchos foros y blogs de la red de redes, hoy en día soy desarrollador <strong>FullStack</strong> de Ruby y Python tambien manejo un poco de GoLang, estoy estudiando Java y con todas las ganas de seguir aprendiendo cada día más.</p>
+
+<p>¿Deseas conocerme? Usa los enlaces de la barra superior para ver mis perfiles.</p>
+
+<p>También puedes apoyar mis proyectos personales, Sinceramente lo apreciaría.</p>
+
+	</article>
+</div>
+
+			
+			<footer class="ui secondary segment">
+				DaviDJose | Informático Derechos Reservados
+			</footer>
+    	
+		</section>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('.dream-flip-toggle').click(function () {
+		var target = $('.pusher')
+		if (dreamBodyBgSwitchIndex === 0) {
+    	if(colorBG)
+    	 	setBackground(dreamBody, dreamBodyBgSwitch[1])
+			dreamBodyBgSwitchIndex = 1
+			target.toggleClass('flip-it')
+			setTimeout( function () {
+				$('.front').css('display','none')
+				$('.back').css('display','block')
+			}, 300)
+	 	}
+    else {
+    	if(colorBG)
+    		setBackground(dreamBody, dreamBodyBgSwitch[0])
+     	dreamBodyBgSwitchIndex = 0     	
+     	target.toggleClass('flip-it')   
+     	setTimeout( function (){
+     		$('.front').css('display','block')
+				$('.back').css('display','none')
+			}, 300)			
+		}
+	})
+</script>
+
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="/js/twemoji.min.js"></script>
+<script type="text/javascript">
+(function init(){
+	console.log('Twemoji up and making stuff colourful!')
+	var classes = (document.getElementsByClassName('twemoji'))
+	for(var i = 0; i < classes.length; i++)
+		twemoji.parse(classes[i]);                
+})()
+</script>
+
+	
+</body>
+
 </html>

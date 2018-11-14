@@ -509,14 +509,18 @@ datos eran enviados a un servidor <strong>(Todo en el mismo código de JavaScrip
 </blockquote>
 
 <dl>
-<input type="text" placeholder="Usuario"></input>
-<p>
-<input type="password" placeholder="Password"></input>
-<p>
-<button onclick="hackdom()" class="ui label violet">HackDom</button>
+<div class="ui input">
+    <input type="text" placeholder="Usuario"></input>
+</div>
+<br>
+<div class="ui input">
+    <input type="password" placeholder="Password"></input>
+</div>
+<br>
+<div onclick="hackdom()" class="ui huge primary button">HackDom</div>
+<br>
 <pre id="res" style="background-color:hsl(208, 95%, 8%,0.95); color:white; " hidden>
 </pre>
-
 <script>
     function hackdom() {
     var res = document.getElementById("res");
